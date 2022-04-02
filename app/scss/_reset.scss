@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+ul[class],
+ol[class] {
+  padding: 0;
+  list-style: none; /*+ у ol у Прокопчука  не было*/
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul[class],
+ol[class],
+blockquote,
+figure,
+figcaption,
+dl,
+dd {
+  margin: 0;
+}
+
+
+/*+*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+} 
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+input,
+button,
+textarea,
+select {
+  padding: 0; /*+*/
+  font: inherit; /*Почему-то font желтым? у Прокопчука также*/
+  background-color: transparent; /*+*/
+  border: none; /*+*/
+}
+
+textarea {
+  resize: vertical; /*+*/
+}
+
+button {
+  cursor: pointer; /*+*/
+}
+
+a {
+  text-decoration: none;
+  color: inherit; /*+*/
+}
