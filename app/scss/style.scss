@@ -1,9 +1,65 @@
-@import 'vars';
-@import 'fonts';
-@import 'reset';
-@import 'global';
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "global";
 
+.header {
+  padding: 60px 0;
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__user {
+    display: flex;
+    align-items: center;
+  }
+  &__menu {
+    display: flex;
+    margin: 0 63px 0;
+  }
+  &__user-nav {
+    display: flex;
+  }
+}
 
+.menu {
+  &__item:not(:last-child) {
+    margin-right: 45px;
+  }
+  &__link {
+    font-size: 18px;
+    color: $default;
+    transition: color 0.3s;
+    &:hover {
+      color: $accent;
+    }
+  }
+  &__link--active {
+    color: $accent;
+  }
+}
 
+.user-nav {
+  &__item:not(:last-child) {
+    margin-right: 36px;
+  }
+  &__link {
+    position: relative;
+  }
+  &__num {
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: $accent;
+    top: -4px;
+    left: 12px;
+    font-size: 10px;
+    line-height: 1.4;
+    color: #fff;
+    text-align: center;
+  }
+}
 
-@import 'media';
+@import "media";

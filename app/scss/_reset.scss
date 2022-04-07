@@ -22,7 +22,7 @@ h4,
 h5,
 h6,
 p,
-ul[class],
+ul,
 ol[class],
 blockquote,
 figure,
@@ -31,7 +31,6 @@ dl,
 dd {
   margin: 0;
 }
-
 
 /*+*/
 h1,
@@ -42,7 +41,7 @@ h5,
 h6 {
   font-size: inherit;
   font-weight: inherit;
-} 
+}
 
 img {
   max-width: 100%;
