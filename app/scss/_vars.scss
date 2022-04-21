@@ -1,6 +1,11 @@
-$accent: #ff6838;
-$default: #31352b;
-$title: #363853;
+$orange-900: #ff6838;
+$dark: #31352b;
+$darkBlue-900: #363853;
+$dark: #31352b;
+$gray: #c2c2c2;
+$light-orange: rgba(255, 122, 80, 0.1);
+$stroke: rgba(255, 104, 56, 0.7);
+$silver-200: #ececec;
 
 %rubik-400 {
   font-family: "Rubik-Regular", sans-serif;
@@ -15,4 +20,40 @@ $title: #363853;
 %rubik-italic {
   font-family: "Rubik-Italic", sans-serif;
   font-weight: 400;
+  font-style: italic;
+}
+
+%box-shadow-stroke {
+  box-shadow: 0 0 0 2px $stroke;
+  transition: box-shadow 0.3s;
+}
+
+%text-shadow {
+  text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+  box-shadow: none;
+  transition: text-shadow 0.3s;
+}
+
+%btn-r {
+  color: #fff;
+  background-color: $orange-900;
+  transition: color 0.3s, background-color 0.3s;
+}
+
+%btn-f {
+  color: $orange-900;
+  background-color: $light-orange;
+  @extend %box-shadow-stroke;
+}
+
+%btn-h {
+  color: $orange-900;
+  background-color: #fff;
+  @extend %box-shadow-stroke;
+}
+
+%btn-a {
+  color: $orange-900;
+  background-color: $light-orange;
+  box-shadow: none;
 }
