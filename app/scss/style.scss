@@ -31,20 +31,16 @@
     font-size: 18px;
     color: $dark;
     border-radius: 5px;
-    transition: color 0.3s;
-    &:focus {
-      @extend %box-shadow-stroke;
-    }
-    &:hover {
+    &--active {
       color: $orange-900;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px $stroke;
     }
     &:active {
       color: $dark;
-      @extend %text-shadow;
+      box-shadow: none;
     }
-  }
-  &__link--active {
-    color: $orange-900;
   }
 }
 
@@ -60,7 +56,9 @@
     padding: 11px;
     border-radius: 5px;
     &:focus {
-      @extend %btn-f;
+      background-color: $light-orange;
+      box-shadow: 0 0 0 2px $stroke;
+      transition: box-shadow 0.3s;
     }
     &:hover {
       background-color: $orange-900;
@@ -71,7 +69,8 @@
       }
     }
     &:active {
-      @extend %btn-a;
+      background-color: $light-orange;
+      box-shadow: none;
     }
   }
 
@@ -94,6 +93,177 @@
   }
 }
 
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__content {
+    width: 450px;
+    color: $darkBlue-900;
+  }
+  &__title {
+    font-size: 66px;
+    margin-bottom: 20px;
+    @extend %rubik-500;
+    line-height: 1.3;
+    text-transform: uppercase;
+    & span {
+      color: $orange-900;
+    }
+  }
+  &__text {
+    margin-bottom: 20px;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  &__btn {
+    margin-right: 34px;
+    padding: 12px 32px;
+    font-size: 18px;
+    line-height: 1.3;
+    letter-spacing: 0.03em;
+    &:hover {
+      box-shadow: 0p 5px 12px rgba(255, 104, 56, 0.2);
+    }
+  }
+  &__link {
+    border-radius: 5px;
+    &:focus {
+      box-shadow: 0 0 0 2px $stroke;
+    }
+    &:active {
+      color: $darkBlue-900;
+      box-shadow: none;
+    }
+  }
+}
+
+.popular {
+  color: $darkBlue-900;
+  &__title {
+    margin-bottom: 60px;
+    text-align: center;
+  }
+  &__menu {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 45px;
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: 210px 210px 210px 210px 210px;
+    grid-template-rows: 299px 299px;
+    margin-bottom: 60px;
+    gap: 30px;
+  }
+  &__card {
+    display: grid;
+    width: 210px;
+    height: 299px;
+    text-align: center;
+  }
+  &__more {
+    display: block;
+    margin: 0 auto;
+    width: fit-content;
+    text-decoration: underline solid $darkBlue-900;
+    &:focus {
+      border-radius: 5px;
+      box-shadow: 0px 0px 0px 2px rgba(255, 122, 80, 0.7);
+    }
+    &:hover {
+      text-decoration: none;
+    }
+    &:active {
+      color: $darkBlue-900;
+      box-shadow: none;
+    }
+  }
+}
+
+.card {
+  padding: 20px 15px;
+  font-size: 15px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0px 0px 0px 1px $silver-200;
+  &__img {
+    margin: 0 auto 10px;
+  }
+  &__name-prod {
+    height: 36px;
+    margin-bottom: 10px;
+    line-height: 1.2;
+    color: $dark;
+  }
+  &__price-prod {
+    margin-bottom: 10px;
+    @extend %rubik-500;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+  &__btn {
+    padding: 7px 16px;
+    margin: 0 auto;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1.3;
+    color: #fff;
+    background-color: $orange-900;
+  }
+}
+
+.pop-menu {
+  &__item {
+    background-color: #fff;
+  }
+  &__item:not(:last-child) {
+    margin-right: 20px;
+  }
+  &__link {
+    display: flex;
+    height: 70px;
+    padding-left: 32px;
+    padding-right: 32px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    transition: color 0.3s, background-color 0.3s;
+    &--active {
+      color: #fff;
+      background-color: $orange-900;
+      path {
+        fill: #fff;
+      }
+    }
+    & svg {
+      margin-right: 10px;
+    }
+    &:focus {
+      box-shadow: 0 0 0 2px $stroke;
+      transition: box-shadow 0.3s;
+    }
+    &:hover {
+      path {
+        fill: $orange-900;
+      }
+      color: $orange-900;
+      box-shadow: 0 0 0 2px $stroke;
+      background-color: $light-orange;
+    }
+    &:active {
+      path {
+        fill: $darkBlue-900;
+      }
+      color: $darkBlue-900;
+      background-color: #fff;
+      box-shadow: inset 0 -5 12 rgba(255, 104, 56, 0.2);
+    }
+  }
+}
+
 .footer {
   &__top {
     margin-bottom: 60px;
@@ -109,17 +279,19 @@
     margin-bottom: 30px;
   }
   &__input {
-    outline: transparent;
+    background-color: #fff;
   }
   &__input,
   &__btn {
-    display: flex;
     width: 200px;
     height: 44px;
-    align-items: center;
-    justify-content: center;
     font-size: 14px;
     border-radius: 5px;
+  }
+  &__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   &__input {
     margin-bottom: 12px;
@@ -139,32 +311,28 @@
       transition: color 0.3s;
     }
   }
-  &__btn svg {
-    margin-right: 15.6px;
-  }
   &__btn {
-    @extend %btn-r;
-  }
-  &__btn:focus {
-    path {
-      fill: $orange-900;
-      transition: fill 0.3s;
+    & svg {
+      margin-right: 15.6px;
     }
-    @extend %btn-f;
-  }
-  &__btn:hover {
-    path {
-      fill: $orange-900;
-      transition: fill 0.3s;
+    &:focus {
+      path {
+        fill: $orange-900;
+        transition: fill 0.3s;
+      }
     }
-    @extend %btn-h;
-  }
-  &__btn:active {
-    path {
-      fill: $orange-900;
-      transition: fill 0.3s;
+    &:hover {
+      path {
+        fill: $orange-900;
+        transition: fill 0.3s;
+      }
     }
-    @extend %btn-a;
+    &:active {
+      path {
+        fill: $orange-900;
+        transition: fill 0.3s;
+      }
+    }
   }
   &__line {
     border: 1px solid $silver-200;
@@ -251,7 +419,8 @@
       transition: fill 0.3s;
     }
     &:focus {
-      @extend %box-shadow-stroke;
+      box-shadow: 0 0 0 2px $stroke;
+      transition: box-shadow 0.3s;
       circle {
         fill: $light-orange;
         /*stroke: $stroke;

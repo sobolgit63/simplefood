@@ -4,11 +4,11 @@ body {
 }
 
 body {
-  display: flex;
   flex-direction: column;
   font-size: 20px;
   line-height: 1.5;
   color: $dark;
+  background-color: #f9faff;
   @extend %rubik-400;
 }
 
@@ -26,7 +26,10 @@ main {
 .menu__link,
 .user-nav__link,
 .footer__input,
-.btn {
+.footer__btn .btn,
+.link-gen,
+.card__btn,
+.pop__menu {
   outline: transparent;
 }
 
@@ -45,4 +48,54 @@ main {
     opacity: 0.5;
     box-shadow: none;
   }
+}
+
+.link-gen {
+  transition: color 0.3s;
+  &:focus {
+    transition: box-shadow 0.3s;
+  }
+  &:hover {
+    color: $orange-900;
+  }
+  &:active {
+    text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+    transition: text-shadow 0.3s;
+  }
+}
+
+section {
+  margin-bottom: 120px;
+}
+
+.btn {
+  border-radius: 5px;
+  color: #fff;
+  background-color: $orange-900;
+  transition: all 0.3s;
+  &:focus {
+    color: $orange-900;
+    background-color: $light-orange;
+    box-shadow: 0 0 0 2px $stroke;
+    transition: box-shadow 0.3s;
+  }
+  &:hover {
+    color: $orange-900;
+    background-color: #fff;
+    box-shadow: 0 0 0 2px $stroke;
+    transition: box-shadow 0.3s;
+  }
+  &:active {
+    color: $orange-900;
+    background-color: $light-orange;
+    box-shadow: none;
+  }
+}
+
+.title {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 1.3;
+  color: $darkBlue-900;
 }
